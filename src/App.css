@@ -5,38 +5,31 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.25rem;
+  width: 2rem;
+  padding: 0.25rem;
+  border-radius: 62.4rem;
+  background-color: var(--clr-purple-600);
+  position: relative;
+  transition: all .4s;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="checkbox"]::before {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: white;
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  transition: all .4s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+input[type="checkbox"]:checked::before {
+  left: 50%;
+  transition: all .4s;
 }
