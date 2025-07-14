@@ -3,9 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -44,6 +42,24 @@
   --clr-orange-400: #FF7E35;
   --clr-orange-50: #FFF5ED;
   --clr-red-500: #EE5454;
+  
+  /* Font Size */
+  --txt-mbl-1: 5.5rem;
+  --txt-mbl-2: 2.5rem;
+  --txt-mbl-3: 1.25rem;
+  --txt-mbl-4: 1.125rem;
+  --txt-mbl-5: 0.875rem;
+
+  --txt-1: 9rem;
+  --txt-2: 4rem;
+  --txt-3: 2.25rem;
+  --txt-4: 1.75rem;
+  --txt-5: 1.5rem;
+  --txt-6: 1.25rem;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
 }
 
