@@ -1,5 +1,15 @@
+@font-face {
+  font-family: Rubik;
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: Rubik-Italic;
+  src: url('./assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Rubik, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
