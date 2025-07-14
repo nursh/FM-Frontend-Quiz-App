@@ -91,8 +91,15 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: var(--txt-mbl-2);
+  text-align: left;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+
+h1 span:first-child {
+  font-weight: 300;
 }
 
 button {
@@ -113,6 +120,14 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+/* Utils */
+
+.italics {
+  font-family: Rubik-Italic;
+  font-weight: 400;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {

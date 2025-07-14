@@ -8,8 +8,8 @@ type Theme = 'light' | 'dark';
 export default function ThemeSwitch() {
 
   const theme: Theme = 'light';
-  let sunLogo;
-  let moonLogo;
+  let sunLogo: string;
+  let moonLogo: string;
 
   if (theme === 'light') {
     sunLogo = SunDark;

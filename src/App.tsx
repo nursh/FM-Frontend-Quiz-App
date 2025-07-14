@@ -12,11 +12,11 @@ function App() {
     <div>
       <ThemeSwitch />
        <h1>
-        <span>Welcome to the</span><br />
+        <span className='normal'>Welcome to the</span><br />
         <span>Frontend Quiz!</span>
        </h1>
 
-       <h2>Pick a subject to get started</h2>
+       <h2 className='italics normal'>Pick a subject to get started</h2>
     </div>
   )
 }
