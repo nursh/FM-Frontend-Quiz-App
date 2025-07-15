@@ -9,7 +9,7 @@ export default function QuizSelectionPage({ titles }: Props) {
   const [selectedTitle, setSelectedTitle] = useState("");
 
   return (
-    <>
+    <div className="radio-group">
       {titles.map((title) => (
         <Option
           text={title}
@@ -19,6 +19,6 @@ export default function QuizSelectionPage({ titles }: Props) {
           selected={selectedTitle}
         />
       ))}
-    </>
+    </div>
   );
 }
