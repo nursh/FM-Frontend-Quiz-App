@@ -1,11 +1,15 @@
 import { useEffect } from "react";
 import "./App.css";
 import ThemeSwitch from "./components/ThemeSwitch";
+import { quizzes } from '../data.json';
+import QuizSelectionPage from "./pages/QuizSelectionPage";
 
 function App() {
   useEffect(() => {
     document.title = "Frontend Quiz App";
   }, []);
+
+  const titles = quizzes.map(quiz => quiz.title);
 
   return (
     <div>
@@ -20,9 +24,9 @@ function App() {
 
           <h2 className="italics normal">Pick a subject to get started</h2>
         </section>
-        
-        <section>
 
+        <section>
+          <QuizSelectionPage titles={titles} />
         </section>
       </main>
     </div>
