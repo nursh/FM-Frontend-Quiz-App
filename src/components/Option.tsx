@@ -7,7 +7,8 @@ type Props = {
 
 export default function Option({ text, name, onSelect, selected }: Props) {
   return (
-    <>
+    <label htmlFor={text}>
+      {text}
       <input
         type="radio"
         name={name}
@@ -16,7 +17,6 @@ export default function Option({ text, name, onSelect, selected }: Props) {
         checked={selected === text}
         value={text}
       />
-      <label htmlFor={text}>{text}</label>
-    </>
+    </label>
   );
 }
