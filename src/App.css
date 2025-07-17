@@ -81,3 +81,19 @@ label:has(input[type="radio"]:checked) {
   width: 1.7rem;
   height: 1.7rem;
 }
+
+.bg-orange {
+  --bg-color: var(--clr-orange-50);
+}
+
+.bg-blue {
+  --bg-color: var(--clr-blue-50);
+}
+
+.bg-purple {
+  --bg-color: var(--clr-purple-100);
+}
+
+.bg-green {
+  --bg-color: var(--clr-green-100);
+}

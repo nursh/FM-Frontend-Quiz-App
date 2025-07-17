@@ -1,3 +1,5 @@
+import { getImageBg } from "@app/utils/getImageBg";
+
 type Props = {
   text: string;
   name: string;
@@ -21,7 +23,7 @@ export default function Option({
   return (
     <label htmlFor={text}>
       {icon ? (
-        <div className="icon-bg">
+        <div className={`icon-bg ${getImageBg(icon)}`}>
           <img src={getImageUrl(icon)} />
         </div>
       ) : undefined}
