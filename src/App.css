@@ -48,10 +48,15 @@ input[type="radio"] {
   appearance: none;
 }
 
-label {
+label:has(input[type="radio"]) {
   border-radius: 0.75rem;
   padding: var(--spg-200);
   box-shadow: 0px 16px 40px 0 rgba(143, 160, 193, 0.14);
+
+  
+  display: flex;
+  align-items: center;
+  gap: var(--spg-200);
 }
 
 label:has(input[type="radio"]:hover) {
@@ -60,4 +65,19 @@ label:has(input[type="radio"]:hover) {
 
 label:has(input[type="radio"]:checked) {
   outline: 2px solid var(--clr-green-500);
+}
+
+
+.icon-bg {
+  width: var(--spg-500);
+  height: var(--spg-500);
+  display: grid;
+  place-items: center;
+
+  background-color: var(--bg-color, var(--clr-grey-50));
+}
+
+.icon-bg img {
+  width: 1.7rem;
+  height: 1.7rem;
 }

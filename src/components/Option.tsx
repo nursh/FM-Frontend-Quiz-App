@@ -1,4 +1,3 @@
-
 type Props = {
   text: string;
   name: string;
@@ -7,17 +6,26 @@ type Props = {
   icon?: string;
 };
 
-export default function Option({ text, name, onSelect, selected, icon }: Props) {
-
+export default function Option({
+  text,
+  name,
+  onSelect,
+  selected,
+  icon,
+}: Props) {
   function getImageUrl(imagePath: string) {
-    const cleanPath = imagePath.replace(/\./, '..');
+    const cleanPath = imagePath.replace(/\./, "..");
     return new URL(cleanPath, import.meta.url).href;
   }
 
   return (
     <label htmlFor={text}>
-      {icon ? <img src={getImageUrl(icon)} /> : undefined}
-      {text}  
+      {icon ? (
+        <div className="icon-bg">
+          <img src={getImageUrl(icon)} />
+        </div>
+      ) : undefined}
+      {text}
       <input
         type="radio"
         name={name}
