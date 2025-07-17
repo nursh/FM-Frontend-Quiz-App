@@ -5,7 +5,7 @@ import ThemeSwitch from "@app/components/ThemeSwitch";
 
 export default function QuizSelectionPage() {
   const [selectedTitle, setSelectedTitle] = useState("");
-  const titles = quizzes.map((quiz) => quiz.title);
+  const topics = quizzes.map(({ title, icon }) => ({ title, icon }));
 
   return (
     <>
@@ -20,13 +20,14 @@ export default function QuizSelectionPage() {
         <h2 className="italics normal">Pick a subject to get started</h2>
       </section>
       <div className="radio-group">
-        {titles.map((title) => (
+        {topics.map(({ title, icon }) => (
           <Option
             text={title}
             name="title"
             key={title}
             onSelect={setSelectedTitle}
             selected={selectedTitle}
+            icon={icon}
           />
         ))}
       </div>
