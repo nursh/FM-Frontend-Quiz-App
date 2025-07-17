@@ -1,7 +1,9 @@
-import { useEffect } from "react";
-import "./App.css";
+import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router";
-import QuizSelectionPage from "./pages/QuizSelectionPage";
+import "./App.css";
+
+ 
+const QuizSelectionPage = lazy(() => import("./pages/QuizSelectionPage"));
 
 function App() {
   useEffect(() => {

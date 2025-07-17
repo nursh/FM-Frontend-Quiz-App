@@ -8,12 +8,13 @@ export default function QuizSelectionPage() {
   const topics = quizzes.map(({ title, icon }) => ({ title, icon }));
 
   return (
-    <>
-      <ThemeSwitch />
+    <main>
+      <header>
+        <ThemeSwitch />
+      </header>
       <section>
         <h1>
           <span className="normal">Welcome to the</span>
-          <br />
           <span>Frontend Quiz!</span>
         </h1>
 
@@ -31,6 +32,6 @@ export default function QuizSelectionPage() {
           />
         ))}
       </div>
-    </>
+    </main>
   );
 }

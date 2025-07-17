@@ -1,8 +1,6 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 
@@ -52,7 +50,7 @@ label:has(input[type="radio"]) {
   border-radius: 0.75rem;
   padding: var(--spg-200);
   box-shadow: 0px 16px 40px 0 rgba(143, 160, 193, 0.14);
-
+  background-color: var(--clr-white);
   
   display: flex;
   align-items: center;
@@ -67,12 +65,14 @@ label:has(input[type="radio"]:checked) {
   outline: 2px solid var(--clr-green-500);
 }
 
+/* Option icons */
 
 .icon-bg {
   width: var(--spg-500);
   height: var(--spg-500);
   display: grid;
   place-items: center;
+  border-radius: var(--spg-100);
 
   background-color: var(--bg-color, var(--clr-grey-50));
 }
