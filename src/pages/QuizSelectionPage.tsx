@@ -12,25 +12,27 @@ export default function QuizSelectionPage() {
       <header>
         <ThemeSwitch />
       </header>
-      <section>
-        <h1>
-          <span className="normal">Welcome to the</span>
-          <span>Frontend Quiz!</span>
-        </h1>
+      <div className="container">
+        <section className="flow">
+          <h1>
+            <span className="normal">Welcome to the</span>
+            <span>Frontend Quiz!</span>
+          </h1>
 
-        <h2 className="italics normal">Pick a subject to get started</h2>
-      </section>
-      <div className="radio-group">
-        {topics.map(({ title, icon }) => (
-          <Option
-            text={title}
-            name="title"
-            key={title}
-            onSelect={setSelectedTitle}
-            selected={selectedTitle}
-            icon={icon}
-          />
-        ))}
+          <h2 className="italics normal">Pick a subject to get started</h2>
+        </section>
+        <div className="radio-group">
+          {topics.map(({ title, icon }) => (
+            <Option
+              text={title}
+              name="title"
+              key={title}
+              onSelect={setSelectedTitle}
+              selected={selectedTitle}
+              icon={icon}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );

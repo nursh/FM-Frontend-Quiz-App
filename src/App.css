@@ -3,7 +3,12 @@
   margin: 0 auto;
 }
 
-
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: var(--spg-400);
+  gap: var(--spg-500)
+}
 
 
 input[type="checkbox"] {
