@@ -10,11 +10,23 @@
   gap: var(--spg-500)
 }
 
+.switch {
+  display: flex;
+  align-items: baseline;
+  gap: var(--spg-100);
+}
+
+.switch img {
+  width: 1rem;
+  height: 1rem;
+}
+
 
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
   cursor: pointer;
+  margin: 0;
   height: 1.25rem;
   width: 2rem;
   padding: 0.25rem;

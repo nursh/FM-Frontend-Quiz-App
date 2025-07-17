@@ -20,7 +20,7 @@ export default function ThemeSwitch() {
   }
 
   return (
-    <div>
+    <div className="switch">
       <img src={sunLogo} />
       <label htmlFor="theme-switch">
         <input type="checkbox" name="theme-switch" id="theme-switch" />
