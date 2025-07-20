@@ -4,6 +4,7 @@ import "./App.css";
 
  
 const QuizSelectionPage = lazy(() => import("./pages/QuizSelectionPage"));
+const QuizPage = lazy(() => import("./pages/QuizPage"));
 
 function App() {
   useEffect(() => {
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path="FM-Frontend-Quiz-App">
         <Route index element={<QuizSelectionPage />} />
+        <Route path=":title/quiz" element={<QuizPage />} />
       </Route>
     </Routes>
   );
