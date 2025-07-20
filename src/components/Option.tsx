@@ -1,9 +1,9 @@
-import { getImageBg } from "@app/utils/getImageBg";
+import Icon from "./Icon";
 
 type Props = {
   text: string;
   name: string;
-  onSelect: (t: string) => void;
+  onSelect: (title: string) => void;
   selected: string;
   icon?: string;
 };
@@ -15,18 +15,9 @@ export default function Option({
   selected,
   icon,
 }: Props) {
-  function getImageUrl(imagePath: string) {
-    const cleanPath = imagePath.replace(/\./, "..");
-    return new URL(cleanPath, import.meta.url).href;
-  }
-
   return (
     <label htmlFor={text}>
-      {icon ? (
-        <div className={`icon-bg ${getImageBg(icon)}`}>
-          <img src={getImageUrl(icon)} />
-        </div>
-      ) : undefined}
+      {icon ? <Icon iconPath={icon} /> : undefined}
       {text}
       <input
         type="radio"
