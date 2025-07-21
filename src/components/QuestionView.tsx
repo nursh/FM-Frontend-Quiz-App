@@ -1,39 +1,12 @@
 import { useReducer, useState } from "react";
 import Question from "./Question";
 import QuestionOption from "./QuestionOption";
+import type { Question as TQuestion } from '@app/utils/types';
+import { reducer } from "./reducers/QuestionReducer";
 
-
-type State = {
-  index: number;
-  currentQuestion: Question;
-}
-
-type Action = {
-  type: 'inc',
-  questions: Question[];
-}
-
-function reducer(state: State, action: Action) {
-
-  if (action.type === 'inc') {
-    const newIndex = state.index + 1;
-    return {
-      index: newIndex,
-      currentQuestion:  action.questions[newIndex]
-    }
-  }
-
-  throw Error(`Unknown action: ${action.type}`);
-}
-
-type Question = {
-  question: string;
-  options: string[];
-  answer: string;
-}
 
 type Props = {
-  questions: Question[];
+  questions: TQuestion[];
 };
 
 export default function QuestionView({ questions }: Props) {
