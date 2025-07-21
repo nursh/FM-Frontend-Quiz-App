@@ -1,0 +1,29 @@
+
+type Props = {
+  text: string;
+  name: string;
+  onSelect: (title: string) => void;
+  selected: string;
+};
+
+export default function QuestionOption({
+  text,
+  name,
+  onSelect,
+  selected,
+}: Props) {
+
+  return (
+    <label htmlFor={text}>
+      {text}
+      <input
+        type="radio"
+        name={name}
+        id={text}
+        onChange={(evt) => onSelect(evt.target.value)}
+        checked={selected === text}
+        value={text}
+      />
+    </label>
+  );
+}

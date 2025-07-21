@@ -1,5 +1,5 @@
 type Props = {
-  question?: string;
+  question: string;
 }
 
 export default function Question({ question }: Props) {
