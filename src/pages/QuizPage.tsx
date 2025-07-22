@@ -1,16 +1,13 @@
 import ThemeSwitch from "@app/components/ThemeSwitch";
-import { useParams } from "react-router";
 import { quizzes } from '../../data.json';
 import Icon from "@app/components/Icon";
 import QuestionView from "@app/components/QuestionView";
+import { useQuiz } from "@app/context/useQuiz";
 
-type ParamsProps = {
-  title: string;
-}
 
 export default function QuizPage() {
 
-  const { title } = useParams<ParamsProps>();
+  const { title } = useQuiz();
   const quizIndex = quizzes.findIndex(quiz => quiz.title === title);
   const {
     icon,

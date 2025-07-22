@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="FM-Frontend-Quiz-App">
             <Route index element={<QuizSelectionPage />} />
-            <Route path=":title/quiz" element={<QuizPage />} />
+            <Route path="quiz" element={<QuizPage />} />
             <Route path="results" element={<QuizResultPage />} />
           </Route>
         </Routes>

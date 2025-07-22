@@ -4,6 +4,7 @@ import QuestionOption from "./QuestionOption";
 import type { Question as TQuestion } from '@app/utils/types';
 import { reducer } from "./reducers/QuestionReducer";
 import { useNavigate } from "react-router";
+import { useResults } from "@app/context/useResults";
 
 
 type Props = {
@@ -17,7 +18,7 @@ export default function QuestionView({ questions }: Props) {
     currentQuestion: questions[0]
   });
   const [selectedAnswer, setSelectedAnswer] = useState("");
-  const [answerStatus, setAnswerStatus] = useState<boolean[]>([]);
+  const { results, setResults } = useResults();
   const [correctAnswer, setCorrectAnswer] = useState<boolean>(false);
   const [error, setError] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -46,13 +47,12 @@ export default function QuestionView({ questions }: Props) {
           setError(false);
         }
         const isCorrectAnswer = selectedAnswer === state.currentQuestion.answer;
-        console.log('Correct: ', isCorrectAnswer);
         if (isCorrectAnswer) {
           setCorrectAnswer(true);
         } else {
           setCorrectAnswer(false);
         }
-        setAnswerStatus([...answerStatus, isCorrectAnswer]);
+        setResults([...results, isCorrectAnswer]);
         if (questionNumber < questions.length) {
           buttonRef.current!.textContent = 'Next Question';
         } else {
