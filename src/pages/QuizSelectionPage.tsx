@@ -1,16 +1,19 @@
 import Option from "@app/components/Option";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { quizzes } from "../../data.json";
 import ThemeSwitch from "@app/components/ThemeSwitch";
 import { useNavigate } from "react-router";
+import { useQuiz } from "@app/context/QuizContext";
 
 export default function QuizSelectionPage() {
   const [selectedTitle, setSelectedTitle] = useState("");
   const topics = quizzes.map(({ title, icon }) => ({ title, icon }));
   const navigate = useNavigate();
+  const { setTitle } = useQuiz();
 
   const onSelectTitle = (title: string) => {
     setSelectedTitle(title);
+    setTitle(title);
     navigate(`/FM-Frontend-Quiz-App/${title}/quiz`);
   }
 
