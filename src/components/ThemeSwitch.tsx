@@ -2,6 +2,7 @@ import MoonDark from '@app/assets/images/icon-moon-dark.svg';
 import MoonLight from '@app/assets/images/icon-moon-light.svg';
 import SunDark from '@app/assets/images/icon-sun-dark.svg';
 import SunLight from '@app/assets/images/icon-sun-light.svg';
+import '@app/styles/switch.css';
 
 type Theme = 'light' | 'dark';
 
