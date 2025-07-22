@@ -1,11 +1,11 @@
 @font-face {
   font-family: Rubik;
-  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf');
+  src: url('../assets/fonts/Rubik-VariableFont_wght.ttf');
 }
 
 @font-face {
   font-family: Rubik-Italic;
-  src: url('./assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
+  src: url('../assets/fonts/Rubik-Italic-VariableFont_wght.ttf');
 }
 
 :root {
@@ -82,7 +82,7 @@ body {
   min-width: 20rem;
   min-height: 100vh;
   padding-inline: var(--spg-300);
-  background: no-repeat url('./assets/images/pattern-background-mobile-light.svg');
+  background: no-repeat url('../assets/images/pattern-background-mobile-light.svg');
 }
 
 h1 {

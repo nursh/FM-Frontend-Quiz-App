@@ -12,7 +12,7 @@ export default function QuizResultPage() {
   const correctAnswers = results.filter(answer => answer).length;
 
   const handleClick = () => {
-    navigate('/FM-Frontend-Quiz-App');
+    navigate(import.meta.env.BASE_URL);
   }
 
   return (

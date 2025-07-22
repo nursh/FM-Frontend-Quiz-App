@@ -1,6 +1,6 @@
 import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router";
-import "./App.css";
+import "./styles/App.css";
 import QuizResultPage from "./pages/QuizResultPage";
 import QuizContextProvider from "./context/QuizContext";
 import ResultContextProvider from "./context/ResultContext";

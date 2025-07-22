@@ -14,7 +14,7 @@ export default function QuizSelectionPage() {
   const onSelectTitle = (title: string) => {
     setSelectedTitle(title);
     setTitle(title);
-    navigate(`/FM-Frontend-Quiz-App/quiz`);
+    navigate(`${import.meta.env.BASE_URL}quiz`);
   }
 
   return (

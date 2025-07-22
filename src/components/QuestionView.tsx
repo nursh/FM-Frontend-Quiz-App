@@ -69,7 +69,7 @@ export default function QuestionView({ questions }: Props) {
       }
 
       case "View Result": {
-        navigate(`/FM-Frontend-Quiz-App/results`);
+        navigate(`${import.meta.env.BASE_URL}results`);
         break;
       }
 
