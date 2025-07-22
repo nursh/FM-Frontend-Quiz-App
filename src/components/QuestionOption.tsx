@@ -4,6 +4,7 @@ type Props = {
   name: string;
   onSelect: (title: string) => void;
   selected: string;
+  correctAnswer: boolean;
 };
 
 export default function QuestionOption({

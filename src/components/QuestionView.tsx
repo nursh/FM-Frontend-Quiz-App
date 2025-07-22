@@ -1,8 +1,9 @@
-import { useReducer, useState } from "react";
+import { useReducer, useRef, useState } from "react";
 import Question from "./Question";
 import QuestionOption from "./QuestionOption";
 import type { Question as TQuestion } from '@app/utils/types';
 import { reducer } from "./reducers/QuestionReducer";
+import { useNavigate } from "react-router";
 
 
 type Props = {
@@ -16,6 +17,11 @@ export default function QuestionView({ questions }: Props) {
     currentQuestion: questions[0]
   });
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [answerStatus, setAnswerStatus] = useState<boolean[]>([]);
+  const [correctAnswer, setCorrectAnswer] = useState<boolean>(false);
+  const [error, setError] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const navigate = useNavigate();
 
   const onSelect = (answer: string) => {
     setSelectedAnswer(answer);
@@ -26,7 +32,49 @@ export default function QuestionView({ questions }: Props) {
   }
   
   const handleClick = () => {
-    dispatch({ type: 'inc', questions })
+
+    const buttonText = buttonRef.current!.textContent;
+    const questionNumber = state.index + 1;
+
+    switch(buttonText) {
+
+      case "Submit Answer": {
+        if (selectedAnswer === '') {
+          setError(true);
+          break;
+        } else {
+          setError(false);
+        }
+        const isCorrectAnswer = selectedAnswer === state.currentQuestion.answer;
+        console.log('Correct: ', isCorrectAnswer);
+        if (isCorrectAnswer) {
+          setCorrectAnswer(true);
+        } else {
+          setCorrectAnswer(false);
+        }
+        setAnswerStatus([...answerStatus, isCorrectAnswer]);
+        if (questionNumber < questions.length) {
+          buttonRef.current!.textContent = 'Next Question';
+        } else {
+          buttonRef.current!.textContent = 'View Result';
+        }
+        break;
+      }
+
+      case "Next Question": {
+        dispatch({ type: 'inc', questions });
+        setSelectedAnswer("");
+        buttonRef.current!.textContent = 'Submit Answer';
+        break;
+      }
+
+      case "View Result": {
+        navigate(`/FM-Frontend-Quiz-App/results`);
+        break;
+      }
+
+      default: return;
+    }
   }
 
   return (
@@ -46,10 +94,12 @@ export default function QuestionView({ questions }: Props) {
               key={option}
               selected={selectedAnswer}
               onSelect={onSelect}
+              correctAnswer={correctAnswer}
             />
           ))}
         </div>
-        <button onClick={handleClick}>Submit Answer</button>
+        <button onClick={handleClick} ref={buttonRef}>Submit Answer</button>
+        {error ? <p style={{ color: 'red' }}>Please select an answer</p> : undefined}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
-import type { Question as TQuestion } from '@app/utils/types';
+import type { Question } from '@app/utils/types';
 
 type State = {
   index: number;
-  currentQuestion: TQuestion;
+  currentQuestion: Question;
 }
 
 type Action = {
   type: 'inc',
-  questions: TQuestion[];
+  questions: Question[];
 }
 
 export function reducer(state: State, action: Action) {

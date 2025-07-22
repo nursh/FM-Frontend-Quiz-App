@@ -1,6 +1,7 @@
 import { lazy, useEffect } from "react";
 import { Route, Routes } from "react-router";
 import "./App.css";
+import QuizResultPage from "./pages/QuizResultPage";
 
  
 const QuizSelectionPage = lazy(() => import("./pages/QuizSelectionPage"));
@@ -17,6 +18,7 @@ function App() {
       <Route path="FM-Frontend-Quiz-App">
         <Route index element={<QuizSelectionPage />} />
         <Route path=":title/quiz" element={<QuizPage />} />
+        <Route path="results" element={<QuizResultPage />} />
       </Route>
     </Routes>
   );
