@@ -1,9 +1,9 @@
 import Option from "@app/components/Option";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { quizzes } from "../../data.json";
 import ThemeSwitch from "@app/components/ThemeSwitch";
 import { useNavigate } from "react-router";
-import { useQuiz } from "@app/context/QuizContext";
+import { useQuiz } from "@app/context/useQuiz";
 
 export default function QuizSelectionPage() {
   const [selectedTitle, setSelectedTitle] = useState("");
