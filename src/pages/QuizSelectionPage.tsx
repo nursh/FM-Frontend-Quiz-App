@@ -1,9 +1,9 @@
 import Option from "@app/components/Option";
 import { useState } from "react";
 import { quizzes } from "../../data.json";
-import ThemeSwitch from "@app/components/ThemeSwitch";
 import { useNavigate } from "react-router";
 import { useQuiz } from "@app/context/useQuiz";
+import Header from "@app/components/Header";
 
 export default function QuizSelectionPage() {
   const [selectedTitle, setSelectedTitle] = useState("");
@@ -19,9 +19,7 @@ export default function QuizSelectionPage() {
 
   return (
     <main>
-      <header>
-        <ThemeSwitch />
-      </header>
+      <Header />
       <div className="container">
         <section className="flow">
           <h1>

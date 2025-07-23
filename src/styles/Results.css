@@ -1,25 +1,25 @@
 
 .results {
-  background: var(--clr-white);
+  background: light-dark(var(--clr-white), var(--clr-blue-850));
   padding: var(--spg-400);
   box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
   border-radius: 0.75rem;
 }
 
-.results .row {
+.results .row { 
   --hr-space: center;
   gap: 1rem;
-  font-size: var(--font-md);
+  font-size: var(--font-md);   
 }
 
 .quiz-score {
   text-align: center;
-  color: var(--clr-blue-900);
+  color: light-dark(var(--clr-blue-900), var(--clr-white));
   font-size: clamp(var(--txt-mbl-1), 3rem + 12.5vw, var(--txt-1));
 }
 
 .quiz-length {
   text-align: center;
-  color: var(--clr-grey-500);
+  color: light-dark(var(--clr-grey-500), var(--clr-blue-300));
   font-size: clamp(var(--txt-mbl-4), 0.8571rem + 1.3393vw, var(--txt-5));
 }

@@ -1,7 +1,6 @@
 header {
   padding-block: var(--spg-100);
   display: flex;
-  justify-content: flex-end;
 }
 
 .quiz-title {
@@ -10,8 +9,8 @@ header {
   gap: var(--spg-300);
 }
 
-.quiz-title {
+.quiz-title p {
   font-size: var(--font-md);
   font-weight: 500;
-  color: var(--clr-blue-900);
+  color: light-dark(var(--clr-blue-900), var(--clr-white));
 }

@@ -18,7 +18,9 @@ export default function Header({ title, icon }: Props) {
           <p>{title}</p>
         </div>
       : undefined}
-      <ThemeSwitch />
+      <div style={title ? undefined : { marginLeft: 'auto' }}>
+        <ThemeSwitch />
+      </div>
     </header>
   )
 }
