@@ -1,11 +1,19 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  display: grid;
+  justify-content: center;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin-block-start: var(--spg-400);
-  gap: var(--spg-500)
+  gap: var(--spg-500);
+}
+
+
+@media (min-width: 72rem) {
+
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spg-1800);
+  }
 }

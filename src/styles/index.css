@@ -64,6 +64,8 @@
   --txt-5: 1.5rem;
   --txt-6: 1.25rem;
 
+  --font-md: clamp(var(--txt-mbl-4), 0.6786rem + 2.2321vw, var(--txt-4));
+
   color-scheme: light dark;
 }
 
@@ -82,7 +84,9 @@ body {
   min-width: 20rem;
   min-height: 100vh;
   padding-inline: var(--spg-300);
-  background: no-repeat url('../assets/images/pattern-background-mobile-light.svg');
+  background-image: url('../assets/images/pattern-background-mobile-light.svg');
+  background-repeat: no-repeat;
+
 }
 
 h1,h2,p {
@@ -91,7 +95,7 @@ h1,h2,p {
 }
 
 h1 {
-  font-size: clamp(var(--txt-mbl-2), 1rem + 7.5vw, var(--txt-2));
+  font-size: clamp(var(--txt-mbl-2), 1.4286rem + 5.3571vw, var(--txt-2));
   text-align: left;
   line-height: 1;
   font-weight: 500;
@@ -109,7 +113,7 @@ h2 {
   font-weight: 400;
   line-height: 1.5;
   color: var(--clr-grey-500);
-  font-size: clamp(var(--txt-mbl-5), 0.25rem + 3.125vw, var(--txt-6));
+  font-size: clamp(var(--txt-mbl-5), 0.6071rem + 1.3393vw, var(--txt-6));
   text-align: left;
 }
 
@@ -123,7 +127,7 @@ button {
   border-radius: 0.75rem;
   border: 1px solid transparent;
   padding: var(--spg-200);
-  font-size: var(--txt-mbl-4);
+  font-size: var(--font-md);
   font-weight: 500;
   font-family: inherit;
   background: var(--clr-purple-600);
@@ -171,5 +175,15 @@ button:focus-visible {
 
 @media (min-width: 48rem) {
 
+  body {
+    background-image: url('../assets/images/pattern-background-tablet-light.svg');
+  }
+}
 
+@media(min-width: 72rem) {
+
+  body {
+    background-image: url('../assets/images/pattern-background-desktop-light.svg');
+    background-size: cover;
+  }
 }

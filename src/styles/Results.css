@@ -9,16 +9,17 @@
 .results .row {
   --hr-space: center;
   gap: 1rem;
+  font-size: var(--font-md);
 }
 
 .quiz-score {
   text-align: center;
   color: var(--clr-blue-900);
-  font-size: var(--txt-mbl-1);
+  font-size: clamp(var(--txt-mbl-1), 3rem + 12.5vw, var(--txt-1));
 }
 
 .quiz-length {
   text-align: center;
   color: var(--clr-grey-500);
-  font-size: var(--txt-mbl-4);
+  font-size: clamp(var(--txt-mbl-4), 0.8571rem + 1.3393vw, var(--txt-5));
 }
