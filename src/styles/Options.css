@@ -18,6 +18,9 @@ label:has(input[type="radio"]) {
   display: flex;
   align-items: center;
   gap: var(--spg-200);
+  font-size: var(--font-md);
+  color: var(--clr-blue-900);
+  font-weight: 500;
 }
 
 label:has(input[type="radio"]:hover) {
@@ -59,4 +62,12 @@ label:has(input[type="radio"]:checked) {
 
 .bg-green {
   --bg-color: var(--clr-green-100);
+}
+
+@media (min-width: 72rem) {
+
+  label:has(input[type="radio"]) {
+    
+    padding: var(--spg-300);
+  }
 }

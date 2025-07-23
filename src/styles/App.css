@@ -10,10 +10,9 @@
 }
 
 
-@media (min-width: 72rem) {
+@media (min-width: 90rem) {
 
   .container {
     grid-template-columns: 1fr 1fr;
-    gap: var(--spg-1800);
   }
 }

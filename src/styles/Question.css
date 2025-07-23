@@ -1,0 +1,28 @@
+.selection-error.row {
+  --hr-space: center;
+  gap:var(--spg-100);
+}
+
+.selection-error p {
+  color: var(--clr-red-500);
+  font-size: clamp(var(--txt-mbl-4), 0.8571rem + 1.3393vw, var(--txt-5));
+}
+
+progress {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+
+}
+
+::-webkit-progress-bar {
+  background-color: var(--clr-white);
+  border-radius: 62rem;
+  padding: 0.25rem;
+  border: 1px solid black;
+}
+
+::-webkit-progress-value {
+  background-color: var(--clr-purple-600);
+  border-radius: 62rem;
+}

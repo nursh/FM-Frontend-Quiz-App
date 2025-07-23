@@ -5,6 +5,8 @@ import type { Question as TQuestion } from '@app/utils/types';
 import { reducer } from "./reducers/QuestionReducer";
 import { useNavigate } from "react-router";
 import { useResults } from "@app/context/useResults";
+import IconError from '@app/assets/images/icon-error.svg';
+import "@app/styles/Question.css";
 
 
 type Props = {
@@ -25,6 +27,7 @@ export default function QuestionView({ questions }: Props) {
   const navigate = useNavigate();
 
   const onSelect = (answer: string) => {
+    setError(false);
     setSelectedAnswer(answer);
   };
 
@@ -78,14 +81,14 @@ export default function QuestionView({ questions }: Props) {
   }
 
   return (
-    <div>
+    <div className="container">
       <div>
         <h2>{`Question ${state.index + 1} of ${questions.length}`}</h2>
         <Question question={state.currentQuestion.question} />
         <progress value={quizProgress()}></progress>
       </div>
 
-      <div>
+      <div className="flow">
         <div className="radio-group">
           {state.currentQuestion.options.map((option) => (
             <QuestionOption
@@ -99,7 +102,12 @@ export default function QuestionView({ questions }: Props) {
           ))}
         </div>
         <button onClick={handleClick} ref={buttonRef}>Submit Answer</button>
-        {error ? <p style={{ color: 'red' }}>Please select an answer</p> : undefined}
+        {error ? 
+          <div className="selection-error row">
+            <img src={IconError} />
+            <p>Please select an answer</p>
+          </div>
+          : undefined}
       </div>
     </div>
   );

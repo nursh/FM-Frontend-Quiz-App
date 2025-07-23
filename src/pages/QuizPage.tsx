@@ -21,9 +21,7 @@ export default function QuizPage() {
         {title}
         <ThemeSwitch /> 
       </header>
-      <div>
-        <QuestionView questions={questions} />
-      </div>
+      <QuestionView questions={questions} />
     </main>
   )
 }
