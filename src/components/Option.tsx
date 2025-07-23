@@ -1,4 +1,5 @@
 import Icon from "./Icon";
+import '@app/styles/Options.css';
 
 type Props = {
   text: string;

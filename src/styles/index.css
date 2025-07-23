@@ -85,6 +85,11 @@ body {
   background: no-repeat url('../assets/images/pattern-background-mobile-light.svg');
 }
 
+h1,h2,p {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-size: clamp(var(--txt-mbl-2), 1rem + 7.5vw, var(--txt-2));
   text-align: left;
@@ -93,8 +98,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--spg-100);
-  margin: 0;
-  padding: 0;
+  color: var(--clr-blue-900);
 }
 
 h1 span:first-child {
@@ -107,8 +111,6 @@ h2 {
   color: var(--clr-grey-500);
   font-size: clamp(var(--txt-mbl-5), 0.25rem + 3.125vw, var(--txt-6));
   text-align: left;
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -118,15 +120,21 @@ header {
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 0.75rem;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  padding: var(--spg-200);
+  font-size: var(--txt-mbl-4);
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background: var(--clr-purple-600);
+  color: var(--clr-white );
   cursor: pointer;
   transition: border-color 0.25s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 button:hover {
   border-color: #646cff;
@@ -147,20 +155,17 @@ button:focus-visible {
   margin-block-start: var(--flow-space, var(--spg-200));
 }
 
+.row {
+  display: flex;
+  justify-content: var(--hr-space, space-between);
+  align-items: center;
+}
+
 
 /* color scheme */
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
 }
 
 
