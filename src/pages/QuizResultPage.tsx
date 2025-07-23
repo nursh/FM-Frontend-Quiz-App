@@ -11,10 +11,11 @@ export default function QuizResultPage() {
   const { title } = useQuiz();
   const quizIndex = quizzes.findIndex((quiz) => quiz.title === title);
   const { icon } = quizzes[quizIndex];
-  const { results } = useResults();
+  const { results, setResults } = useResults();
   const correctAnswers = results.filter((answer) => answer).length;
 
   const handleClick = () => {
+    setResults([]);
     navigate(import.meta.env.BASE_URL);
   };
 

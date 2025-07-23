@@ -36,3 +36,10 @@ progress {
   font-size: clamp(var(--txt-6), 0.5357rem + 3.5714vw, var(--txt-3));
   color: var(--clr-blue-900);
 }
+
+@media (min-width: 90rem) {
+  
+  progress {
+    --flow-space: var(--spg-2300);
+  }
+}
