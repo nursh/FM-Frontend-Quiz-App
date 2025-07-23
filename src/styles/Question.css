@@ -9,23 +9,33 @@
 }
 
 progress {
-  appearance: none;
   -webkit-appearance: none;
   width: 100%;
   --flow-space: var(--spg-300);
+  border-radius: 62rem;
+  border-color: transparent;
+}
+
+::-moz-progress-bar {
+  border-radius: 62rem;
+  background-color: var(--clr-purple-600);
+  transform: scale(.99, 0.5);
+}
+
+::-webkit-progress-inner-element {
+  border-radius: 62rem;
+  padding: 0.25rem;
 }
 
 ::-webkit-progress-bar {
   background-color: var(--clr-white);
-  border-radius: 62rem;
-  padding: 0.25rem;
-  border: 1px solid black;
 }
 
 ::-webkit-progress-value {
   background-color: var(--clr-purple-600);
   border-radius: 62rem;
 }
+
 
 .question-details h2 {
   color: var(--clr-grey-500);
