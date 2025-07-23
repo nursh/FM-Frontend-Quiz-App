@@ -89,8 +89,9 @@ export default function QuestionView({ questions }: Props) {
 
       <div className="flow">
         <div className="radio-group">
-          {state.currentQuestion.options.map((option) => (
+          {state.currentQuestion.options.map((option, idx) => (
             <QuestionOption
+              idx={idx}
               text={option}
               name="question"
               key={option}

@@ -23,12 +23,9 @@ label:has(input[type="radio"]) {
   font-weight: 500;
 }
 
-label:has(input[type="radio"]:hover) {
- outline: 2px solid var(--clr-purple-600);
-}
-
+label:has(input[type="radio"]:hover),
 label:has(input[type="radio"]:checked) {
-  outline: 2px solid var(--clr-green-500);
+ outline: 2px solid var(--clr-purple-600);
 }
 
 /* Option icons */

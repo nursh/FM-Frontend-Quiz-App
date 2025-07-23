@@ -6,6 +6,7 @@ type Props = {
   onSelect: (title: string) => void;
   selected: string;
   correctAnswer: boolean;
+  idx: number;
 };
 
 export default function QuestionOption({
@@ -13,10 +14,12 @@ export default function QuestionOption({
   name,
   onSelect,
   selected,
+  idx
 }: Props) {
 
   return (
     <label htmlFor={text}>
+      <span>{idxLetter[idx]}</span>
       {text}
       <input
         type="radio"
@@ -29,3 +32,5 @@ export default function QuestionOption({
     </label>
   );
 }
+
+const idxLetter = ['A', 'B', 'C', 'D'];

@@ -8,6 +8,7 @@
   font-size: clamp(var(--txt-mbl-4), 0.8571rem + 1.3393vw, var(--txt-5));
 }
 
+/* Progress */
 progress {
   -webkit-appearance: none;
   width: 100%;
@@ -46,6 +47,27 @@ progress {
   font-size: clamp(var(--txt-6), 0.5357rem + 3.5714vw, var(--txt-3));
   color: var(--clr-blue-900);
 }
+/* End */
+
+
+/* Label */ 
+
+label span {
+  width: var(--spg-500);
+  height: var(--spg-500);
+  background-color: var(--clr-grey-50);
+  text-align: center;
+  border-radius: 0.5rem;
+  color: var(--clr-grey-500);
+  font-size: var(--font-md);
+}
+
+label:has(input[type="radio"]:checked) span {
+  background-color: var(--clr-purple-600);
+  color: var(--clr-white);
+}
+
+/* End */
 
 @media (min-width: 90rem) {
   
