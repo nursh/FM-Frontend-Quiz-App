@@ -12,7 +12,7 @@ progress {
   appearance: none;
   -webkit-appearance: none;
   width: 100%;
-
+  --flow-space: var(--spg-300);
 }
 
 ::-webkit-progress-bar {
@@ -25,4 +25,14 @@ progress {
 ::-webkit-progress-value {
   background-color: var(--clr-purple-600);
   border-radius: 62rem;
+}
+
+.question-details h2 {
+  color: var(--clr-grey-500);
+  font-size: clamp(var(--txt-mbl-5),  0.6071rem + 1.3393vw, var(--txt-6));
+}
+
+.question-details p {
+  font-size: clamp(var(--txt-6), 0.5357rem + 3.5714vw, var(--txt-3));
+  color: var(--clr-blue-900);
 }

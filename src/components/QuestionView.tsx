@@ -1,5 +1,4 @@
 import { useReducer, useRef, useState } from "react";
-import Question from "./Question";
 import QuestionOption from "./QuestionOption";
 import type { Question as TQuestion } from '@app/utils/types';
 import { reducer } from "./reducers/QuestionReducer";
@@ -82,9 +81,9 @@ export default function QuestionView({ questions }: Props) {
 
   return (
     <div className="container">
-      <div>
-        <h2>{`Question ${state.index + 1} of ${questions.length}`}</h2>
-        <Question question={state.currentQuestion.question} />
+      <div className="question-details flow">
+        <h2 className="italics">{`Question ${state.index + 1} of ${questions.length}`}</h2>
+        <p>{state.currentQuestion.question}</p>
         <progress value={quizProgress()}></progress>
       </div>
 
