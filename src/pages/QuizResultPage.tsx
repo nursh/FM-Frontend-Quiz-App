@@ -1,10 +1,10 @@
 import Icon from "@app/components/Icon";
-import ThemeSwitch from "@app/components/ThemeSwitch";
 import { useQuiz } from "@app/context/useQuiz";
 import { useResults } from "@app/context/useResults";
 import { useNavigate } from "react-router";
 import { quizzes } from "../../data.json";
 import '@app/styles/Results.css';
+import Header from "@app/components/Header";
 
 export default function QuizResultPage() {
   const navigate = useNavigate();
@@ -21,11 +21,7 @@ export default function QuizResultPage() {
 
   return (
     <main>
-      <header>
-        <Icon iconPath={icon} />
-        {title}
-        <ThemeSwitch />
-      </header>
+      <Header title={title} icon={icon} />
       <div className="container">
         <h1>
           <span className="normal">Quiz completed</span>

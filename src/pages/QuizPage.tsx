@@ -1,8 +1,7 @@
-import ThemeSwitch from "@app/components/ThemeSwitch";
 import { quizzes } from '../../data.json';
-import Icon from "@app/components/Icon";
 import QuestionView from "@app/components/QuestionView";
 import { useQuiz } from "@app/context/useQuiz";
+import Header from "@app/components/Header";
 
 
 export default function QuizPage() {
@@ -16,11 +15,7 @@ export default function QuizPage() {
 
   return (
     <main>
-      <header>
-        <Icon iconPath={icon} />
-        {title}
-        <ThemeSwitch /> 
-      </header>
+      <Header title={title} icon={icon} />
       <QuestionView questions={questions} />
     </main>
   )

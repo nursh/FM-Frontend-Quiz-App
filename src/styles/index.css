@@ -117,11 +117,7 @@ h2 {
   text-align: left;
 }
 
-header {
-  padding-block: var(--spg-100);
-  display: flex;
-  justify-content: flex-end;
-}
+
 
 button {
   border-radius: 0.75rem;

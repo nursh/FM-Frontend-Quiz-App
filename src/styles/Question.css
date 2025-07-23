@@ -64,6 +64,7 @@ label span {
   place-items: center;
 }
 
+label:has(input[type="radio"]:hover) span,
 label:has(input[type="radio"]:checked) span {
   background-color: var(--clr-purple-600);
   color: var(--clr-white);
