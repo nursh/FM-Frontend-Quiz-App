@@ -56,15 +56,47 @@ label span {
   width: var(--spg-500);
   height: var(--spg-500);
   background-color: var(--clr-grey-50);
-  text-align: center;
   border-radius: 0.5rem;
   color: var(--clr-grey-500);
   font-size: var(--font-md);
+
+  display: grid;
+  place-items: center;
 }
 
 label:has(input[type="radio"]:checked) span {
   background-color: var(--clr-purple-600);
   color: var(--clr-white);
+}
+
+label.correct:has(input[type="radio"]:checked) {
+  outline-color: var(--clr-green-500);
+}
+
+label.wrong:has(input[type="radio"]:checked) {
+  outline-color: var(--clr-red-500);
+}
+
+label.correct:has(input[type="radio"]:checked) span {
+  background-color: var(--clr-green-500);
+  color: var(--clr-white);
+}
+
+label.wrong:has(input[type="radio"]:checked) span {
+  background-color: var(--clr-red-500);
+  color: var(--clr-white);
+}
+/* End */
+
+
+/* Icon Correct*/
+.answer-icon {
+  margin-inline-start: auto;
+  visibility: hidden;
+}
+
+.answer-icon.visible {
+  visibility: visible
 }
 
 /* End */

@@ -20,7 +20,7 @@ export default function QuestionView({ questions }: Props) {
   });
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const { results, setResults } = useResults();
-  const [correctAnswer, setCorrectAnswer] = useState<boolean>(false);
+  const [validateAnswer, setValidateAnswer] = useState<boolean>(false);
   const [error, setError] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const navigate = useNavigate();
@@ -49,11 +49,7 @@ export default function QuestionView({ questions }: Props) {
           setError(false);
         }
         const isCorrectAnswer = selectedAnswer === state.currentQuestion.answer;
-        if (isCorrectAnswer) {
-          setCorrectAnswer(true);
-        } else {
-          setCorrectAnswer(false);
-        }
+        setValidateAnswer(true);
         setResults([...results, isCorrectAnswer]);
         if (questionNumber < questions.length) {
           buttonRef.current!.textContent = 'Next Question';
@@ -65,6 +61,7 @@ export default function QuestionView({ questions }: Props) {
 
       case "Next Question": {
         dispatch({ type: 'inc', questions });
+        setValidateAnswer(false);
         setSelectedAnswer("");
         buttonRef.current!.textContent = 'Submit Answer';
         break;
@@ -97,7 +94,8 @@ export default function QuestionView({ questions }: Props) {
               key={option}
               selected={selectedAnswer}
               onSelect={onSelect}
-              correctAnswer={correctAnswer}
+              answer={state.currentQuestion.answer}
+              validateAnswer={validateAnswer}
             />
           ))}
         </div>

@@ -1,12 +1,15 @@
-import '@app/styles/Options.css';
+import "@app/styles/Options.css";
+import IconCorrect from "@app/assets/images/icon-correct.svg";
+import IconWrong from "@app/assets/images/icon-error.svg";
 
 type Props = {
   text: string;
   name: string;
   onSelect: (title: string) => void;
   selected: string;
-  correctAnswer: boolean;
+  answer: string;
   idx: number;
+  validateAnswer: boolean;
 };
 
 export default function QuestionOption({
@@ -14,11 +17,24 @@ export default function QuestionOption({
   name,
   onSelect,
   selected,
-  idx
+  idx,
+  answer,
+  validateAnswer,
 }: Props) {
+  const correctAnswer = text === answer;
+  const answericon = correctAnswer ? IconCorrect : IconWrong;
 
   return (
-    <label htmlFor={text}>
+    <label
+      htmlFor={text}
+      className={
+        validateAnswer
+          ? (text === selected && correctAnswer)
+            ? "correct"
+            : "wrong"
+          : undefined
+      }
+    >
       <span>{idxLetter[idx]}</span>
       {text}
       <input
@@ -29,8 +45,15 @@ export default function QuestionOption({
         checked={selected === text}
         value={text}
       />
+
+      {(text === selected || correctAnswer) && validateAnswer ? (
+        <img
+          src={answericon}
+          className={selected ? "answer-icon visible" : "answer-icon"}
+        />
+      ) : undefined}
     </label>
   );
 }
 
-const idxLetter = ['A', 'B', 'C', 'D'];
+const idxLetter = ["A", "B", "C", "D"];

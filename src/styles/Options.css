@@ -25,7 +25,7 @@ label:has(input[type="radio"]) {
 
 label:has(input[type="radio"]:hover),
 label:has(input[type="radio"]:checked) {
- outline: 2px solid var(--clr-purple-600);
+  outline: 2px solid var(--clr-purple-600);
 }
 
 /* Option icons */
