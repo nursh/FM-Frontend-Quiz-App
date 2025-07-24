@@ -4,6 +4,7 @@ import "./styles/App.css";
 import QuizResultPage from "./pages/QuizResultPage";
 import QuizContextProvider from "./context/QuizContext";
 import ResultContextProvider from "./context/ResultContext";
+import Header from "./components/Header";
 
 const QuizSelectionPage = lazy(() => import("./pages/QuizSelectionPage"));
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <QuizContextProvider>
+      <Header />
       <ResultContextProvider>
         <Routes>
           <Route path="FM-Frontend-Quiz-App">

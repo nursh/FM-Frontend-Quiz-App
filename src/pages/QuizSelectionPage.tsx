@@ -3,7 +3,6 @@ import { useState } from "react";
 import { quizzes } from "../../data.json";
 import { useNavigate } from "react-router";
 import { useQuiz } from "@app/context/useQuiz";
-import Header from "@app/components/Header";
 
 export default function QuizSelectionPage() {
   const [selectedTitle, setSelectedTitle] = useState("");
@@ -19,7 +18,6 @@ export default function QuizSelectionPage() {
 
   return (
     <main>
-      <Header />
       <div className="container">
         <section className="flow">
           <h1>

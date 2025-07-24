@@ -68,6 +68,10 @@
   color-scheme: light dark;
 }
 
+.dark {
+  color-scheme: dark;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -160,17 +164,18 @@ button:focus-visible {
 }
 
 /* color scheme */
-
 @media (prefers-color-scheme: dark) {
   body {
     background-image:  url("../assets/images/pattern-background-mobile-dark.svg");
   }
 }
 
+
 @media (min-width: 48rem) {
   body {
     background-image: url("../assets/images/pattern-background-tablet-light.svg");
   }
+
 
   @media (prefers-color-scheme: dark) {
     body {
@@ -180,6 +185,7 @@ button:focus-visible {
 }
 
 @media (min-width: 72rem) {
+
   body {
     background-image: url("../assets/images/pattern-background-desktop-light.svg");
     background-size: cover;
@@ -188,6 +194,7 @@ button:focus-visible {
   @media (prefers-color-scheme: dark) {
     body {
       background-image:  url("../assets/images/pattern-background-desktop-dark.svg");
+      background-size: cover;
     }
   }
 }

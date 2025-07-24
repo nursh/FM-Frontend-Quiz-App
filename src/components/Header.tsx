@@ -1,14 +1,19 @@
+import { useQuiz } from "@app/context/useQuiz";
 import Icon from "./Icon";
 import ThemeSwitch from "./ThemeSwitch";
+import { quizzes } from '../../data.json';
 import '@app/styles/Header.css';
 
 
-type Props = {
-  title?: string;
-  icon?: string;
-}
+export default function Header() {
 
-export default function Header({ title, icon }: Props) {
+  const { title } = useQuiz();
+  let icon = '';
+
+  if (title) {
+    const quiz = quizzes.find(quiz => quiz.title === title);
+    icon = quiz ? quiz.icon : '';
+  }
 
   return (
     <header className="row">
