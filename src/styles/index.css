@@ -65,11 +65,16 @@
 
   --font-md: clamp(var(--txt-mbl-4), 0.6786rem + 2.2321vw, var(--txt-4));
 
-  color-scheme: light dark;
-}
+  --light-bg-mbl: url("../assets/images/pattern-background-mobile-light.svg");
+  --dark-bg-mbl: url("../assets/images/pattern-background-mobile-dark.svg");
 
-.dark {
-  color-scheme: dark;
+  --light-bg-tab: url("../assets/images/pattern-background-tablet-light.svg");
+  --dark-bg-tab: url("../assets/images/pattern-background-tablet-dark.svg");
+
+  --light-bg-dsk: url("../assets/images/pattern-background-desktop-light.svg");
+  --dark-bg-dsk: url("../assets/images/pattern-background-desktop-dark.svg");
+
+  color-scheme: light dark;
 }
 
 a {
@@ -86,9 +91,12 @@ body {
   margin: 0;
   min-width: 20rem;
   min-height: 100vh;
-  padding-inline: var(--spg-300);
-  background-image: url("../assets/images/pattern-background-mobile-light.svg");
-  background-repeat: no-repeat;
+  color-scheme: light;
+}
+
+body:has( .dark) {
+  color-scheme: dark;
+  --bg-img: var(--dark-bg-mbl);
 }
 
 h1,
@@ -161,40 +169,4 @@ button:focus-visible {
   display: flex;
   justify-content: var(--hr-space, space-between);
   align-items: center;
-}
-
-/* color scheme */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image:  url("../assets/images/pattern-background-mobile-dark.svg");
-  }
-}
-
-
-@media (min-width: 48rem) {
-  body {
-    background-image: url("../assets/images/pattern-background-tablet-light.svg");
-  }
-
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-image:  url("../assets/images/pattern-background-tablet-dark.svg");
-    }
-  }
-}
-
-@media (min-width: 72rem) {
-
-  body {
-    background-image: url("../assets/images/pattern-background-desktop-light.svg");
-    background-size: cover;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-image:  url("../assets/images/pattern-background-desktop-dark.svg");
-      background-size: cover;
-    }
-  }
 }

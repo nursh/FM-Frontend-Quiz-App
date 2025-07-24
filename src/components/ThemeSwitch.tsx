@@ -24,10 +24,13 @@ export default function ThemeSwitch() {
   }
 
   function switchTheme() {
+
     if (switchRef.current?.checked) {
       setTheme('dark');
+      document.getElementById('root')!.classList.add('dark');
     } else {
       setTheme('light')
+      document.getElementById('root')!.classList.remove('dark');
     }
   }
 
