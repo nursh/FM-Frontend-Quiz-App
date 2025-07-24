@@ -40,6 +40,11 @@ input[type="checkbox"]:checked::before {
 }
 
 @media (min-width: 48rem) {
+
+  .switch {
+    gap: var(--spg-200);
+  }
+  
   .switch img {
     width: 1.5rem;
     height: 1.5rem;

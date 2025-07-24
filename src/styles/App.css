@@ -3,7 +3,8 @@
   min-height: 100vh;
   min-height: 100svh;
   display: grid;
-  justify-content: center;
+  grid-template-rows: max-content 1fr;
+  gap: clamp(3rem, 1.2143rem + 8.9286vw, 5.5rem);
   background-color: light-dark(var(--clr-grey-50), var(--clr-blue-900));
   background-image: var(--bg-img, var(--light-bg-mbl));
   background-repeat: no-repeat;

@@ -1,12 +1,12 @@
 header {
-  padding-block: var(--spg-100);
   display: flex;
+  margin-block-start: var(--spg-200);
 }
 
 .quiz-title {
   display: flex;
   align-items: center;
-  gap: var(--spg-300);
+  gap: clamp(var(--spg-200), 0.6429rem + 1.7857vw, var(--spg-300));
 }
 
 .quiz-title p {
