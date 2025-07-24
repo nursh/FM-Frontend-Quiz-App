@@ -27,10 +27,10 @@ export default function ThemeSwitch() {
 
     if (switchRef.current?.checked) {
       setTheme('dark');
-      document.getElementById('root')!.classList.add('dark');
+      document.body.classList.add('dark');
     } else {
       setTheme('light')
-      document.getElementById('root')!.classList.remove('dark');
+      document.body.classList.remove('dark');
     }
   }
 

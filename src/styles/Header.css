@@ -1,6 +1,6 @@
 header {
   display: flex;
-  margin-block-start: var(--spg-200);
+  margin-block-start: clamp(var(--spg-200), -0.9231rem + 9.6154vw, 6rem);
 }
 
 .quiz-title {

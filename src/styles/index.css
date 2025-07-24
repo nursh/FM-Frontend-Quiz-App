@@ -74,7 +74,7 @@
   --light-bg-dsk: url("../assets/images/pattern-background-desktop-light.svg");
   --dark-bg-dsk: url("../assets/images/pattern-background-desktop-dark.svg");
 
-  color-scheme: light dark;
+  color-scheme: light;
 }
 
 a {
@@ -91,10 +91,12 @@ body {
   margin: 0;
   min-width: 20rem;
   min-height: 100vh;
-  color-scheme: light;
+  background-color: light-dark(var(--clr-grey-50), var(--clr-blue-900));
+  background-image: var(--bg-img, var(--light-bg-mbl));
+  background-repeat: no-repeat;
 }
 
-body:has( .dark) {
+:root:has(body.dark) {
   color-scheme: dark;
   --bg-img: var(--dark-bg-mbl);
 }
@@ -169,4 +171,27 @@ button:focus-visible {
   display: flex;
   justify-content: var(--hr-space, space-between);
   align-items: center;
+}
+
+@media (min-width: 48rem) {
+  body {
+    background-image: var(--bg-img, var(--light-bg-tab));
+  }
+
+  :root:has( .dark) {
+    color-scheme: dark;
+    --bg-img: var(--dark-bg-tab);
+  }
+}
+
+@media (min-width: 72rem) {
+  body {
+    background-image: var(--bg-img, var(--light-bg-dsk));
+    background-size: cover;
+  }
+
+  :root:has( .dark) {
+    color-scheme: dark;
+    --bg-img: var(--dark-bg-dsk);
+  }
 }

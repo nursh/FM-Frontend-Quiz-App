@@ -2,40 +2,15 @@
   padding-inline: var(--spg-300);
   min-height: 100vh;
   min-height: 100svh;
+  max-width: 72rem;
+  margin-inline: auto;
   display: grid;
   grid-template-rows: max-content 1fr;
   gap: clamp(3rem, 1.2143rem + 8.9286vw, 5.5rem);
-  background-color: light-dark(var(--clr-grey-50), var(--clr-blue-900));
-  background-image: var(--bg-img, var(--light-bg-mbl));
-  background-repeat: no-repeat;
-}
-
-@media (min-width: 48rem) {
-  #root {
-    background-image: var(--bg-img, var(--light-bg-tab));
-  }
-
-  body:has( .dark) {
-    color-scheme: dark;
-    --bg-img: var(--dark-bg-tab);
-  }
-}
-
-@media (min-width: 72rem) {
-  #root {
-    background-image: var(--bg-img, var(--light-bg-dsk));
-    background-size: cover;
-  }
-
-  body:has( .dark) {
-    color-scheme: dark;
-    --bg-img: var(--dark-bg-dsk);
-  }
 }
 
 .container {
   display: grid;
-  margin-block-start: var(--spg-400);
   gap: var(--spg-500);
 }
 
