@@ -61,10 +61,19 @@ label:has(input[type="radio"]:checked) {
   --bg-color: var(--clr-green-100);
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 80rem) {
 
   label:has(input[type="radio"]) {
-    
     padding: var(--spg-300);
+  }
+  
+  .icon-bg {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .icon-bg img {
+    width: var(--spg-500);
+    height: var(--spg-500);
   }
 }

@@ -89,7 +89,7 @@ a:hover {
 
 body {
   margin: 0;
-  min-width: 20rem;
+  min-width: 22rem;
   min-height: 100vh;
   background-color: light-dark(var(--clr-grey-50), var(--clr-blue-900));
   background-image: var(--bg-img, var(--light-bg-mbl));
@@ -173,7 +173,7 @@ button:focus-visible {
   align-items: center;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 50rem) {
   body {
     background-image: var(--bg-img, var(--light-bg-tab));
   }
@@ -182,9 +182,13 @@ button:focus-visible {
     color-scheme: dark;
     --bg-img: var(--dark-bg-tab);
   }
+
+  button {
+    --flow-space: var(--spg-400);
+  }
 }
 
-@media (min-width: 72rem) {
+@media (min-width: 80rem) {
   body {
     background-image: var(--bg-img, var(--light-bg-dsk));
     background-size: cover;
@@ -194,4 +198,6 @@ button:focus-visible {
     color-scheme: dark;
     --bg-img: var(--dark-bg-dsk);
   }
+
+
 }

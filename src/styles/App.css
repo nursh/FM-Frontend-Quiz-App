@@ -2,20 +2,33 @@
   padding-inline: var(--spg-300);
   min-height: 100vh;
   min-height: 100svh;
-  max-width: 72rem;
   margin-inline: auto;
   display: grid;
   grid-template-rows: max-content 1fr;
-  gap: clamp(3rem, 1.2143rem + 8.9286vw, 5.5rem);
+  gap: var(--spg-600);
 }
 
 .container {
   display: grid;
-  gap: var(--spg-500);
+  gap: var(--spg-500)
 }
 
-@media (min-width: 90rem) {
+@media (min-width: 50rem) {
+
+  #root {
+    max-width: 48rem;
+    gap: clamp(var(--spg-600), 1.2143rem + 8.9286vw, 5.5rem);
+  }
+}
+
+@media(min-width: 80rem) {
+
+  #root {
+    max-width: 72rem;
+  }
+
   .container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
+    gap: clamp(var(--spg-800), -5.25rem + 22.5vw, var(--spg-1600));
   }
 }

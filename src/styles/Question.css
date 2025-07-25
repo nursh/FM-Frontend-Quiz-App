@@ -103,7 +103,7 @@ label.wrong:has(input[type="radio"]:checked) span {
 
 /* End */
 
-@media (min-width: 90rem) {
+@media (min-width: 80rem) {
   
   progress {
     --flow-space: var(--spg-2300);

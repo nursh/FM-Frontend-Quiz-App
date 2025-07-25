@@ -7,7 +7,7 @@ import '@app/styles/Results.css';
 
 export default function QuizResultPage() {
   const navigate = useNavigate();
-  const { title } = useQuiz();
+  const { title, setTitle } = useQuiz();
   const quizIndex = quizzes.findIndex((quiz) => quiz.title === title);
   const { icon } = quizzes[quizIndex];
   const { results, setResults } = useResults();
@@ -15,6 +15,7 @@ export default function QuizResultPage() {
 
   const handleClick = () => {
     setResults([]);
+    setTitle('');
     navigate(import.meta.env.BASE_URL);
   };
 
