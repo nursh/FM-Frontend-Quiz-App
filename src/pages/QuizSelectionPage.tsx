@@ -1,5 +1,5 @@
 import Option from "@app/components/Option";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { quizzes } from "../../data.json";
 import { useNavigate } from "react-router";
 import { useQuiz } from "@app/context/useQuiz";
@@ -15,6 +15,10 @@ export default function QuizSelectionPage() {
     setTitle(title);
     navigate(`${import.meta.env.BASE_URL}quiz`);
   }
+
+  useEffect(() => {
+    setTitle('');
+  }, [])
 
   return (
     <main>
